@@ -1,8 +1,12 @@
 package com.example.hello.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CarDto {
 
     private String name;
+
+    @JsonProperty(value = "car_number")
     private String carNumber;
 
     public String getName() {

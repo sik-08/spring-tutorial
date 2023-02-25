@@ -1,7 +1,12 @@
 package com.example.hello.dto;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
 import java.util.List;
 
+@JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy.class)
 public class PutRequestDto {
 
     private String name;
@@ -38,7 +43,7 @@ public class PutRequestDto {
         return "PutRequestDto{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", carList=" + carList.toString() +
+                ", carList=" + carList +
                 '}';
     }
 }
