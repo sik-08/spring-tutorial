@@ -4,7 +4,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PostRequestDto {
     private String account;
+
+    @JsonProperty("e-mail")
     private String email;
+
     private String address;
     private String password;
 
