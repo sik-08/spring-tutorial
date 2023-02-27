@@ -22,7 +22,7 @@ class HelloApplicationTests {
 
         // object -> text
         // object mapper get method 활용
-        var person = new Person("sik", 24);
+        var person = new Person("sik", 24, "010-111-222");
 
         var text = objectMapper.writeValueAsString(person);
         System.out.println(text);
