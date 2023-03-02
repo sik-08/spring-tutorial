@@ -26,6 +26,7 @@ class HelloApplicationTests {
 
         var text = objectMapper.writeValueAsString(person);
         System.out.println(text);
+        System.out.println(text);
 
         // text -> object
         // object mapper default constructor 사용
