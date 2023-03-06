@@ -21,7 +21,7 @@ public class HelloApplication {
         // Encoder encoder = new Encoder(base64Encoder);
 
         // IoC (제어의 역전)
-        Encoder encoder = context.getBean(Encoder.class);
+        Encoder encoder = context.getBean("urlEncode", Encoder.class);
 
         String url = "www.naver.com/books/it?page=10&size=20";
         String result = encoder.encode(url);
@@ -31,16 +31,17 @@ public class HelloApplication {
 }
 
 // Bean -> Spring Container (IoC)
+// 한 개의 클래스에서 여러 개의 Bean을 등록하겠다.
 @Configuration
 class AppConfig {
 
     @Bean("base64Encode")
-    public Encoder encoder(Base64Encoder base64Encoder){
+    public Encoder encoder1(Base64Encoder base64Encoder){
         return new Encoder(base64Encoder);
     }
 
     @Bean("urlEncode")
-    public Encoder encoder(UrlEncoder urlEncoder){
+    public Encoder encoder2(UrlEncoder urlEncoder){
         return new Encoder(urlEncoder);
     }
 }
