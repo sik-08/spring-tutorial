@@ -18,6 +18,7 @@ class HelloApplicationTests {
         // controller req json(text) -> object
         // response object -> jsno(text)
 
+        // var은 타입 추론이 가능하다.
         var objectMapper = new ObjectMapper();
 
         // object -> text
